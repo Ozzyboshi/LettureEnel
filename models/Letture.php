@@ -64,7 +64,7 @@ class Letture extends \yii\db\ActiveRecord
             'immissionefascia2' => 'Immissione F 2',
             'immissionefascia3' => 'Immissione F 3',
             'deltaconsumofascia1' => 'Delta Consumo F 1',
-            'deltaconsumofascia2' => 'Delta Consumo F 2'
+            'deltaconsumofascia2' => 'Delta Consumo F 2',
         ];
     }
 

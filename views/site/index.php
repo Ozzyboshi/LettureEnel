@@ -4,11 +4,14 @@ use yii\grid\GridView;
 use \app\components\FotovoltaicoGrid;
 $this->title = 'Letture ENEL';
 ?>
+<style>.container {width: auto;}</style>
 <div class="site-index">
 
     <div class="jumbotron">
         <h1>Lista letture contatori ENEL</h1>
     </div>
+    
+    
 
     <div class="body-content">
         <div class="row">

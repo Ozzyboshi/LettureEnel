@@ -63,7 +63,7 @@ class SiteController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => Letture::find()->orderBy('data desc'),
-            'sort' => false
+            //'sort' => false
         ]);
 
         return $this->render('index',['dataProvider' => $dataProvider]);

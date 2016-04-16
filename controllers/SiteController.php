@@ -97,14 +97,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        /*$query1 = new \yii\db\Query;
-        $query1->select(['letture.*,prezzi.'])->from('letture')->join('LEFT JOIN','prezzi','letture.data between prezzi.datainiziovalidita and prezzi.datafinevalidita');
-        $command      = $query1->createCommand();
-        $query        = $command->queryAll();
 
-        $dataProvider = new ActiveDataProvider([
-                                'query' => $query1,
-                                ]);*/
 
         $query="select id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture,(select @diff1=0".$this->composeQueryPart3Full().") as x order by data";
         $lettureActiverecord = new Letture();

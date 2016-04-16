@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "31f302d14b61e0bd5a59b8aef0f3b6a6",
     "content-hash": "0c8c3e3cf3847f951180bdf6c27da443",
+=======
+    "hash": "1cdacae402e1a560189271fdd25662c6",
+    "content-hash": "9ff3d26b774fb50b1718ba0786f0b806",
+>>>>>>> c35b486d8cb1dfdfc7015472c0a58365c20fa2fd
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -368,6 +373,7 @@
             "time": "2015-10-06 02:49:00"
         },
         {
+<<<<<<< HEAD
             "name": "pear/net_dns2",
             "version": "1.4.1",
             "source": {
@@ -411,6 +417,8 @@
             "time": "2015-04-13 00:55:32"
         },
         {
+=======
+>>>>>>> c35b486d8cb1dfdfc7015472c0a58365c20fa2fd
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.1",
             "source": {

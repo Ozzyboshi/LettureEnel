@@ -1,15 +1,15 @@
 <?php
-/* @var $this yii\web\View */
-use yii\grid\GridView;
 use \app\components\GridViewMultiheader;
 $this->title = 'Letture ENEL';
 ?>
+
+<style>.container {width: auto;}</style>
 <div class="site-index">
 
     <div class="jumbotron">
         <h1>Lista letture contatori ENEL</h1>
     </div>
-
+    
     <div class="body-content">
         <div class="row">
           <div class="col-lg-12">
@@ -43,34 +43,7 @@ $this->title = 'Letture ENEL';
             'immissionedelta3',
                 ],
                 ]);
-            //echo "LOL"; 
-
-            /*FotovoltaicoGrid::widget([
-                'tableOptions' => ['class' => 'table table-striped',],
-                'dataProvider' => $dataProvider,
-                'showHeader' => true,
-                'id' => 'maintable',
-                'firstrow' => ['Data'=>1,'Delta prelievi da ENEL'=>4,'Delta produzione impianto'=>4,'Delta immissioni su rete ENEL'=>4,'Consumi casa'=>3],
-                'secondrow' => ['','F1','F2','F3','TOT','F1','F2','F3','TOT','F1','F2','F3','TOT','Da fotovoltaico','Totali','%'],
-                'columns' => [
-                    'data',
-                    'deltaconsumofascia1Desc',
-                    'deltaconsumofascia2Desc',
-                    'deltaconsumofascia3Desc',
-                    'deltaconsumototaleDesc',
-                    'deltaproduzionefascia1Desc',
-                    'deltaproduzionefascia2Desc',
-                    'deltaproduzionefascia3Desc',
-                    'deltaproduzionetotaleDesc',
-                    'deltaimmissionefascia1Desc',
-                    'deltaimmissionefascia2Desc',
-                    'deltaimmissionefascia3Desc',
-                    'deltaimmissionetotaleDesc',
-                    'consumicasafotovoltaico',
-                    'consumicasatotali',
-                    'consumicasapercDesc'
-                ],
-            ]); */
+            
             
             ?>
           </div>

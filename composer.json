@@ -18,8 +18,12 @@
         "yiisoft/yii2": "^2.0",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
+<<<<<<< HEAD
         "mdmsoft/yii2-admin": "*",
         "pear/net_dns2": "^1.4"
+=======
+        "mdmsoft/yii2-admin": "*"
+>>>>>>> c35b486d8cb1dfdfc7015472c0a58365c20fa2fd
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

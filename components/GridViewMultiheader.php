@@ -30,26 +30,30 @@ class GridViewMultiheader extends GridView {
     }
  
     protected function multiRowHeader() {
-        $res=CHtml::openTag('thead') . "\n";
+        $res=Html::beginTag('thead') . "\n";
+        $res=$res.Html::beginTag('tr') . "\n";
         foreach ($this->addingHeaders as $row) {
             $res=$res.$this->addHeaderRow($row);
         }
-        $res=$res.CHtml::closeTag('thead') . "\n";
+        $res=$res.Html::endTag('tr') . "\n";
+        $res=$res.Html::endTag('thead') . "\n";
         return $res;
     }
  
     protected function addHeaderRow($row) {
         // add a single header row
-        $res=CHtml::openTag('tr') . "\n";
+        
         // inherits header options from first column
-        $options = $this->columns[0]->headerHtmlOptions;
+        //$options = $this->columns[0]->headerHtmlOptions;
+        $options="";
+        $res="";
         foreach ($row as $header => $width) {
             $options['colspan'] = $width;
-            $res=$res.CHtml::openTag('th', $options);
+            $res=$res.Html::beginTag('th', $options);
             $res=$res.$header;
-            $res=$res.CHtml::closeTag('th');
+            $res=$res.Html::endTag('th');
         }
-        $res=$res.CHtml::closeTag('tr') . "\n";
+       
         return $res;
     }
  

@@ -37,6 +37,18 @@ class Letture extends \yii\db\ActiveRecord
     public $immissionedelta2;
     public $immissionedelta3;
 
+    public $euroconsumo1;
+    public $euroconsumo2;
+    public $euroconsumo3;
+
+    public $europroduzione1;
+    public $europroduzione2;
+    public $europroduzione3;
+
+    public $euroimmissione1;
+    public $euroimmissione2;
+    public $euroimmissione3;
+
     /**
      * @inheritdoc
      */
@@ -85,7 +97,61 @@ class Letture extends \yii\db\ActiveRecord
             'immissionefascia2' => 'F 2',
             'immissionefascia3' => 'F 3',
             'deltaconsumofascia1' => 'Delta Consumo F 1',
-            'deltaconsumofascia2' => 'Delta Consumo F 2'
+            'deltaconsumofascia2' => 'Delta Consumo F 2',
+            'consumodelta1witheuro' => 'F1',
+            'consumodelta2witheuro' => 'F2',
+            'consumodelta3witheuro' => 'F3',
+            'produzionedelta1witheuro' => 'F1',
+            'produzionedelta2witheuro' => 'F2',
+            'produzionedelta3witheuro' => 'F3',
+            'immissionedelta1witheuro' => 'F1',
+            'immissionedelta2witheuro' => 'F2',
+            'immissionedelta3witheuro' => 'F3',
         ];
+    }
+
+    public function getConsumodelta1witheuro()
+    {
+        return $this->consumodelta1." \n(".$this->euroconsumo1."€)";
+    }
+
+    public function getConsumodelta2witheuro()
+    {
+        return $this->consumodelta2." \n(".$this->euroconsumo2."€)";
+    }
+
+    public function getConsumodelta3witheuro()
+    {
+        return $this->consumodelta3." \n(".$this->euroconsumo3."€)";
+    }
+
+    public function getProduzionedelta1witheuro()
+    {
+        return $this->produzionedelta1." \n(".$this->europroduzione1."€)";
+    }
+
+    public function getProduzionedelta2witheuro()
+    {
+        return $this->produzionedelta2." \n(".$this->europroduzione2."€)";
+    }
+
+    public function getProduzionedelta3witheuro()
+    {
+        return $this->produzionedelta3." \n(".$this->europroduzione3."€)";
+    }
+
+    public function getImmissionedelta1witheuro()
+    {
+        return $this->immissionedelta1." \n(".$this->euroimmissione1."€)";
+    }
+
+    public function getImmissionedelta2witheuro()
+    {
+        return $this->immissionedelta2." \n(".$this->euroimmissione2."€)";
+    }
+
+    public function getImmissionedelta3witheuro()
+    {
+        return $this->immissionedelta3." \n(".$this->euroimmissione3."€)";
     }
 }

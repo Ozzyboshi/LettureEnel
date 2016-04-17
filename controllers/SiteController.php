@@ -70,7 +70,7 @@ class SiteController extends Controller
         $res="";
         for ($i=1;$i<=3;$i++)
         {
-            $res=$res.",".$string."fascia".$i.",".$string."fascia".$i."-@".$string."fascia".$i."diff as ".$string."delta".$i." ";
+            $res=$res.",".$string."fascia".$i.",".$string."fascia".$i."-@".$string."fascia".$i."diff as ".$string."delta".$i.",round("."prezzofascia".$i."*(".$string."fascia".$i."-@".$string."fascia".$i."diff),2) as euro".$string.$i." ";
         }
         return $res;
     }
@@ -99,7 +99,7 @@ class SiteController extends Controller
     {
 
 
-        $query="select id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture,(select @diff1=0".$this->composeQueryPart3Full().") as x order by data";
+        $query="select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by data";
         $lettureActiverecord = new Letture();
         
 

@@ -91,7 +91,7 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-td {white-space: nowrap;}
+td {white-space: pre-line;}
 
 @media (min-width: 1200px) {
   .container {

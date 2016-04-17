@@ -17,7 +17,7 @@ $this->title = 'Letture ENEL';
 
              echo GridViewMultiheader::widget([
                 'tableOptions' => ['class' => 'table table-striped',],
-                'addingHeaders' => [ ['' => 1],['Prelievi da enel' => 3],['Delta Prelievi da enel' => 4],['Produzione impianto' => 3],['Delta produzione impianto' => 4],['Immissioni su rete ENEL' => 3],['Delta immissioni su rete ENEL' => 4]  ],
+                'addingHeaders' => [ ['' => 1],['Prelievi da enel' => 3],['Delta Prelievi da enel' => 4],['Produzione impianto' => 3],['Delta produzione impianto' => 4],['Immissioni su rete ENEL' => 3],['Delta immissioni su rete ENEL' => 4],['Consumi casa' => 3]  ],
                 'dataProvider' => $dataProvider,
                 'showHeader' => true,
                 'id' => 'summarytable',
@@ -44,6 +44,9 @@ $this->title = 'Letture ENEL';
             'immissionedelta2witheuro',
             'immissionedelta3witheuro',
             'immissionedeltatotalewitheuro',
+            'consumicasafotovoltaico',
+            'consumicasatotali',
+            'consumicasapercentuale',
                 ],
                 ]);
             

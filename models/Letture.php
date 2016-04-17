@@ -110,6 +110,9 @@ class Letture extends \yii\db\ActiveRecord
             'consumodeltatotalewitheuro' => 'TOT',
             'produzionedeltatotalewitheuro' => 'TOT',
             'immissionedeltatotalewitheuro' => 'TOT',
+            'consumicasafotovoltaico' => 'Da fotovoltaico',
+            'consumicasatotali' => 'Totali',
+            'consumicasapercentuale' => '%',
         ];
     }
 
@@ -130,7 +133,7 @@ class Letture extends \yii\db\ActiveRecord
 
     public function getConsumodeltatotalewitheuro()
     {
-        return (string)((int)$this->consumodelta1+(int)$this->consumodelta2+(int)$this->consumodelta2)." \n(".(string)((float)$this->euroconsumo1+(float)$this->euroconsumo2+(float)$this->euroconsumo3)."€)";
+        return (string)((int)$this->consumodelta1+(int)$this->consumodelta2+(int)$this->consumodelta3)." \n(".(string)((float)$this->euroconsumo1+(float)$this->euroconsumo2+(float)$this->euroconsumo3)."€)";
     }
 
     public function getProduzionedelta1witheuro()
@@ -150,7 +153,7 @@ class Letture extends \yii\db\ActiveRecord
 
     public function getProduzionedeltatotalewitheuro()
     {
-        return (string)((int)$this->produzionedelta1+(int)$this->produzionedelta2+(int)$this->produzionedelta2)." \n(".(string)((float)$this->europroduzione1+(float)$this->europroduzione2+(float)$this->europroduzione3)."€)";
+        return (string)((int)$this->produzionedelta1+(int)$this->produzionedelta2+(int)$this->produzionedelta3)." \n(".(string)((float)$this->europroduzione1+(float)$this->europroduzione2+(float)$this->europroduzione3)."€)";
     }
 
     public function getImmissionedelta1witheuro()
@@ -170,7 +173,22 @@ class Letture extends \yii\db\ActiveRecord
 
     public function getImmissionedeltatotalewitheuro()
     {
-        return (string)((int)$this->immissionedelta1+(int)$this->immissionedelta2+(int)$this->immissionedelta2)." \n(".(string)((float)$this->euroimmissione1+(float)$this->euroimmissione2+(float)$this->euroimmissione3)."€)";
+        return (string)((int)$this->immissionedelta1+(int)$this->immissionedelta2+(int)$this->immissionedelta3)." \n(".(string)((float)$this->euroimmissione1+(float)$this->euroimmissione2+(float)$this->euroimmissione3)."€)";
+    }
+
+    public function getConsumicasafotovoltaico()
+    {
+        return ((int)$this->produzionedelta1+(int)$this->produzionedelta2+(int)$this->produzionedelta3) - ((int)$this->immissionedelta1+(int)$this->immissionedelta2+(int)$this->immissionedelta3);
+    }
+
+    public function getConsumicasatotali()
+    {
+        return ((int)$this->consumodelta1+(int)$this->consumodelta2+(int)$this->consumodelta3)+(((int)$this->produzionedelta1+(int)$this->produzionedelta2+(int)$this->produzionedelta3) - ((int)$this->immissionedelta1+(int)$this->immissionedelta2+(int)$this->immissionedelta3));
+    }
+
+    public function getConsumicasapercentuale()
+    {
+        return round($this->getConsumicasafotovoltaico()*100/$this->getConsumicasatotali(),2);
     }
 
 }

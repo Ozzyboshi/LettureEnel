@@ -107,6 +107,9 @@ class Letture extends \yii\db\ActiveRecord
             'immissionedelta1witheuro' => 'F1',
             'immissionedelta2witheuro' => 'F2',
             'immissionedelta3witheuro' => 'F3',
+            'consumodeltatotalewitheuro' => 'TOT',
+            'produzionedeltatotalewitheuro' => 'TOT',
+            'immissionedeltatotalewitheuro' => 'TOT',
         ];
     }
 
@@ -125,6 +128,11 @@ class Letture extends \yii\db\ActiveRecord
         return $this->consumodelta3." \n(".$this->euroconsumo3."€)";
     }
 
+    public function getConsumodeltatotalewitheuro()
+    {
+        return (string)((int)$this->consumodelta1+(int)$this->consumodelta2+(int)$this->consumodelta2)." \n(".(string)((float)$this->euroconsumo1+(float)$this->euroconsumo2+(float)$this->euroconsumo3)."€)";
+    }
+
     public function getProduzionedelta1witheuro()
     {
         return $this->produzionedelta1." \n(".$this->europroduzione1."€)";
@@ -138,6 +146,11 @@ class Letture extends \yii\db\ActiveRecord
     public function getProduzionedelta3witheuro()
     {
         return $this->produzionedelta3." \n(".$this->europroduzione3."€)";
+    }
+
+    public function getProduzionedeltatotalewitheuro()
+    {
+        return (string)((int)$this->produzionedelta1+(int)$this->produzionedelta2+(int)$this->produzionedelta2)." \n(".(string)((float)$this->europroduzione1+(float)$this->europroduzione2+(float)$this->europroduzione3)."€)";
     }
 
     public function getImmissionedelta1witheuro()
@@ -154,4 +167,10 @@ class Letture extends \yii\db\ActiveRecord
     {
         return $this->immissionedelta3." \n(".$this->euroimmissione3."€)";
     }
+
+    public function getImmissionedeltatotalewitheuro()
+    {
+        return (string)((int)$this->immissionedelta1+(int)$this->immissionedelta2+(int)$this->immissionedelta2)." \n(".(string)((float)$this->euroimmissione1+(float)$this->euroimmissione2+(float)$this->euroimmissione3)."€)";
+    }
+
 }

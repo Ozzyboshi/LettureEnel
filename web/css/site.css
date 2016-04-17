@@ -98,3 +98,26 @@ td {white-space: pre-line;}
     width: 1570px;
   }
 }
+
+#summarytable tr td:nth-child(n+5):nth-child(-n+8) {
+    background: #ccc;
+    font-weight: bolder;
+}
+
+#summarytable tr td:nth-child(n+12):nth-child(-n+15) {
+    background: #ccc;
+    font-weight: bolder;
+}
+
+#summarytable tr td:nth-child(n+19):nth-child(-n+22) {
+    background: #ccc;
+    font-weight: bolder;
+}
+
+#summarytable tr td:nth-child(5),#summarytable tr td:nth-child(12),#summarytable tr td:nth-child(19) {
+    border-left: 5px solid #8299B9;
+}
+
+#summarytable tr td:nth-child(8),#summarytable tr td:nth-child(15),#summarytable tr td:nth-child(22) {
+    border-right: 5px solid #8299B9;
+}

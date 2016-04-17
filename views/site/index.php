@@ -38,7 +38,6 @@ $this->title = 'Letture ENEL';
             'produzionedelta3witheuro',
             'immissionefascia1',
             'immissionefascia2',
-            'immissionedelta2',
             'immissionefascia3',
             'immissionedelta1witheuro',
             'produzionedelta2witheuro',

@@ -95,20 +95,21 @@ class SiteController extends Controller
         return $res;
     }
 
+    private function orderByQueryPart()
+    {
+        if (isset ($_GET['sort']) && $_GET['sort']=="data") return "data";
+        return "data desc";
+    }
+
     public function actionIndex()
     {
-
-
-        $query="select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by data";
+        $query="select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by ".$this->orderByQueryPart();
         $lettureActiverecord = new Letture();
-        
-
-        
 
         $dataProvider = new ActiveDataProvider([
             //'query' => Letture::find()->orderBy('data desc'),
             'query' => $lettureActiverecord::findBySql($query), 
-            'sort' => false
+            'sort' => ['attributes' => ['data']],
         ]);
 
         return $this->render('index',['dataProvider' => $dataProvider]);

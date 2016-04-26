@@ -13,6 +13,18 @@ $this->title = 'Letture ENEL';
     </div>
     
     <div class="body-content">
+
+        <div class=row>
+            <div class="col-lg-12">
+                <ul>
+                    <li>Fascia 1 : Ore di punta (F1): dalle 8:00 alle 19:00 nei giorni dal lunedi al venerdi (escluse le festività nazionali)</li>
+                    <li>Fascia 2 : dalle 19:00 alle 8:00 durante i giorni della settimana (escluse le festività nazionali)</li>
+                    <li>Fascia 3 : Sabato Domenica e festivi</li>
+                    <li>Tutti i valori espressi in kWh</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="row">
           <div class="col-lg-12">
             <?php
@@ -57,14 +69,5 @@ $this->title = 'Letture ENEL';
           </div>
         </div>
     </div>
-    <div class=row>
-      <div class="col-lg-12">
-        <ul>
-          <li>Fascia 1 : Ore di punta (F1): dalle 8:00 alle 19:00 nei giorni dal lunedi al venerdi (escluse le festività nazionali)</li>
-          <li>Fascia 2 : dalle 19:00 alle 8:00 durante i giorni della settimana (escluse le festività nazionali)</li>
-          <li>Fascia 3 : Sabato Domenica e festivi</li>
-          <li>Tutti i valori espressi in kWh</li>
-        </ul>
-      </div>
-    </div>
+    
 </div>

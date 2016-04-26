@@ -121,3 +121,6 @@ td {white-space: pre-line;}
 #summarytable tr td:nth-child(8),#summarytable tr td:nth-child(15),#summarytable tr td:nth-child(22) {
     border-right: 5px solid #8299B9;
 }
+#summarytable th, #summarytable td {
+    text-align: center;
+}

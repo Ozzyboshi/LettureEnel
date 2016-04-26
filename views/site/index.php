@@ -1,5 +1,7 @@
 <?php
-use \app\components\GridViewMultiheader;
+# use \app\components\GridViewMultiheader;
+use ozzyboshi\gridviewmultiheader\GridViewMultiheader as GridViewMultiheader;
+
 $this->title = 'Letture ENEL';
 ?>
 

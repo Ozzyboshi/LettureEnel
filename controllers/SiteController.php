@@ -109,7 +109,9 @@ class SiteController extends Controller
         $dataProvider = new ActiveDataProvider([
             //'query' => Letture::find()->orderBy('data desc'),
             'query' => $lettureActiverecord::findBySql($query), 
-            'sort' => ['attributes' => ['data']],
+            'sort' => 
+            //['defaultOrder' => ['data'=>SORT_ASC]],
+            ['attributes' => ['data']],
         ]);
 
         return $this->render('index',['dataProvider' => $dataProvider]);

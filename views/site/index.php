@@ -1,11 +1,8 @@
 <?php
-# use \app\components\GridViewMultiheader;
 use ozzyboshi\gridviewmultiheader\GridViewMultiheader as GridViewMultiheader;
-
 $this->title = 'Letture ENEL';
 ?>
-
-<style>.container {width: auto;}</style>
+<style type="text/css">body div .container:nth-child(2) {width: auto;} </style>
 <div class="site-index">
 
     <div class="jumbotron">
@@ -30,41 +27,39 @@ $this->title = 'Letture ENEL';
             <?php
 
              echo GridViewMultiheader::widget([
-                'tableOptions' => ['class' => 'table table-striped',],
-                'addingHeaders' => [ ['' => 1],['Prelievi da enel' => 3],['Delta Prelievi da enel' => 4],['Produzione impianto' => 3],['Delta produzione impianto' => 4],['Immissioni su rete ENEL' => 3],['Delta immissioni su rete ENEL' => 4],['Consumi casa' => 3]  ],
-                'dataProvider' => $dataProvider,
-                'showHeader' => true,
-                'id' => 'summarytable',
-                'columns' => [
-            'data',
-            ['header'=>'F1','attribute'=>'consumofascia1'],
-            ['header'=>'F2','attribute'=>'consumofascia2'],
-            ['header'=>'F3','attribute'=>'consumofascia3'],
-            'consumodelta1witheuro',
-            'consumodelta2witheuro',
-            'consumodelta3witheuro',
-            'consumodeltatotalewitheuro',
-            ['header'=>'F1','attribute'=>'produzionefascia1'],
-            ['header'=>'F2','attribute'=>'produzionefascia2'],
-            ['header'=>'F3','attribute'=>'produzionefascia3'],
-            'produzionedelta1witheuro',
-            'produzionedelta2witheuro',
-            'produzionedelta3witheuro',
-            'produzionedeltatotalewitheuro',
-            ['header'=>'F1','attribute'=>'immissionefascia1'],
-            ['header'=>'F2','attribute'=>'immissionefascia2'],
-            ['header'=>'F3','attribute'=>'immissionefascia3'],
-            'immissionedelta1witheuro',
-            'immissionedelta2witheuro',
-            'immissionedelta3witheuro',
-            'immissionedeltatotalewitheuro',
-            'consumicasafotovoltaico',
-            'consumicasatotali',
-            'consumicasapercentuale',
-                ],
+                    'tableOptions' => ['class' => 'table table-striped',],
+                    'addingHeaders' => [ ['' => 1],['Prelievi da enel' => 3],['Delta Prelievi da enel' => 4],['Produzione impianto' => 3],['Delta produzione impianto' => 4],['Immissioni su rete ENEL' => 3],['Delta immissioni su rete ENEL' => 4],['Consumi casa' => 3]  ],
+                    'dataProvider' => $dataProvider,
+                    'showHeader' => true,
+                    'id' => 'summarytable',
+                    'columns' => [
+                    'data',
+                    ['header'=>'F1','attribute'=>'consumofascia1'],
+                    ['header'=>'F2','attribute'=>'consumofascia2'],
+                    ['header'=>'F3','attribute'=>'consumofascia3'],
+                    'consumodelta1witheuro',
+                    'consumodelta2witheuro',
+                    'consumodelta3witheuro',
+                    'consumodeltatotalewitheuro',
+                    ['header'=>'F1','attribute'=>'produzionefascia1'],
+                    ['header'=>'F2','attribute'=>'produzionefascia2'],
+                    ['header'=>'F3','attribute'=>'produzionefascia3'],
+                    'produzionedelta1witheuro',
+                    'produzionedelta2witheuro',
+                    'produzionedelta3witheuro',
+                    'produzionedeltatotalewitheuro',
+                    ['header'=>'F1','attribute'=>'immissionefascia1'],
+                    ['header'=>'F2','attribute'=>'immissionefascia2'],
+                    ['header'=>'F3','attribute'=>'immissionefascia3'],
+                    'immissionedelta1witheuro',
+                    'immissionedelta2witheuro',
+                    'immissionedelta3witheuro',
+                    'immissionedeltatotalewitheuro',
+                    'consumicasafotovoltaico',
+                    'consumicasatotali',
+                    'consumicasapercentuale',
+                    ],
                 ]);
-            
-            
             ?>
           </div>
         </div>

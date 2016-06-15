@@ -55,6 +55,8 @@ $config = [
         'class'=>'mdm\admin\components\AccessControl',
         'allowActions'=> [
           'site/index',
+          'site/datalogger',
+          'site/about',
         ],
     ],
     'params' => $params,

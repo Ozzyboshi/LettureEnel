@@ -18,7 +18,7 @@
         "yiisoft/yii2": "^2.0",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "mdmsoft/yii2-admin": "*",
+        "mdmsoft/yii2-admin": "~2.0",
         "pear/net_dns2": "^1.4",
         "ozzyboshi/yii2-gridview-multiheader": "*"
     },

@@ -11,6 +11,8 @@ use app\models\ContactForm;
 use app\models\SignupForm;
 use yii\data\ActiveDataProvider;
 use app\models\Letture;
+use app\models\PasswordForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -22,7 +24,7 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout','changepassword'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -140,23 +142,14 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
-    }
-
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionDatalogger()
+    {
+        return $this->render('datalogger');
     }
 
     public function actionSignup()
@@ -173,5 +166,59 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+
+      public function actionChangepassword()
+      {
+        $model = new PasswordForm;
+        $modeluser = User::find()->where([
+            'username'=>Yii::$app->user->identity->username
+        ])->one();
+      
+        if($model->load(Yii::$app->request->post()))
+        {
+            if($model->validate())
+            {
+                try
+                {
+                    $modeluser->password = $_POST['PasswordForm']['newpass'];
+                    if($modeluser->save())
+                    {
+                        Yii::$app->getSession()->setFlash(
+                            'success','Password changed'
+                        );
+                        return $this->redirect(['index']);
+                    }
+                    else
+                    {
+                        Yii::$app->getSession()->setFlash(
+                            'error','Password not changed'
+                        );
+                        return $this->redirect(['index']);
+                    }
+                }
+                catch(Exception $e)
+                {
+                    Yii::$app->getSession()->setFlash(
+                        'error',"{$e->getMessage()}"
+                    );
+                    return $this->render('changepassword',[
+                        'model'=>$model
+                    ]);
+                }
+            }
+            else
+            {
+                return $this->render('changepassword',[
+                    'model'=>$model
+                ]);
+            }
+        }
+        else
+        {
+            return $this->render('changepassword',[
+                'model'=>$model
+            ]);
+        }
     }
 }

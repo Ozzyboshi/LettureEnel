@@ -35,17 +35,25 @@ AppAsset::register($this);
 
             $items = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-                ['label' => 'Letture', 'url' => ['/letture/index']],
-                ['label' => 'Prezzi', 'url' => ['/prezzi/index']],
-                Yii::$app->user->isGuest ?
-                    ['label' => 'Login', 'url' => ['/site/login']] :
-                    ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                        'url' => ['/site/logout'],
-                        'linkOptions' => ['data-method' => 'post']],
+                ['label' => 'Data logger', 'url' => ['/site/datalogger']],
             ];
 
+            if (Yii::$app->user->isGuest)
+            {
+                $items[]=['label' => 'About', 'url' => ['/site/about']];
+                $items[]=['label' => 'Login', 'url' => ['/site/login']];
+            }
+            else
+            {
+                $items[]=['label' => 'Prezzi', 'url' => ['/prezzi/index']];
+                $items[]=['label' => 'Letture', 'url' => ['/letture/index']];
+                $items[]=['label' => 'About', 'url' => ['/site/about']];
+                $items[]=['label' => 'Cambia password', 'url' => ['/site/changepassword']];
+                $items[]=['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        'url' => ['/site/logout'],
+                        'linkOptions' => ['data-method' => 'post']];
+            }
+           
             if ( Yii::$app->user->can('permission_admin'))
               $items[]=['label' => 'Permissions', 'url' => ['/admin/assignment']];
 

@@ -14,8 +14,7 @@
         public function rules()
         {
             return [
-                [['oldpass','newpass','repeatnewpass'],'required'],
-                ['oldpass','findPasswords'],
+                [['newpass','repeatnewpass'],'required'],
                 ['repeatnewpass','compare','compareAttribute'=>'newpass'],
             ];
         }

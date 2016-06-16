@@ -14,8 +14,8 @@ class m160104_200434_create_fotovoltaico_tables extends Migration
       }
       $this->createTable('{{%prezzi}}', [
           'id' => Schema::TYPE_PK,
-          'datainiziovalidita' => 'date' . ' NOT NULL default \'0000-00-00\'',
-          'datafinevalidita' => 'date' . ' NOT NULL default \'0000-00-00\'',
+          'datainiziovalidita' => 'date' . ' NOT NULL',
+          'datafinevalidita' => 'date' . ' NOT NULL',
           'prezzofascia1' => 'double' . '(8,6) NOT NULL default \'0.00\'',
           'prezzofascia2' => 'double' . '(8,6) NOT NULL default \'0.00\'',
           'prezzofascia3' => 'double' . '(8,6) NOT NULL default \'0.00\'',

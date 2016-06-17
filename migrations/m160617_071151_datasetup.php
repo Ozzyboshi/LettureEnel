@@ -1,11 +1,25 @@
 <?php
 
 use yii\db\Migration;
+use yii\base\InvalidConfigException;
+use yii\rbac\DbManager;
+use yii\db\Schema;
 
 class m160617_071151_datasetup extends Migration
 {
+    protected function getAuthManager()
+    {
+      $authManager = Yii::$app->getAuthManager();
+      if (!$authManager instanceof DbManager) {
+          throw new InvalidConfigException('You should configure "authManager" component to use database before executing this migration.');
+      }
+      return $authManager;
+    }
     public function up()
     {
+
+	$authManager = $this->getAuthManager();
+
 	$this->insert($authManager->itemTable,array(
 	 'name'=>'/*',
 	 'type'=>2,

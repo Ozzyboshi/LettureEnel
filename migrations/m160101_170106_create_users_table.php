@@ -16,7 +16,7 @@ class m160101_170106_create_users_table extends Migration
           'id' => Schema::TYPE_PK,
           'username' => Schema::TYPE_STRING . ' NOT NULL',
           'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
-          'displayname' => Schema::TYPE_STRING . '(50) NOT NULL default '',
+          'displayname' => Schema::TYPE_STRING . '(50) NOT NULL default \'\'',
           'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
           'password_reset_token' => Schema::TYPE_STRING,
           'email' => Schema::TYPE_STRING . ' NOT NULL',

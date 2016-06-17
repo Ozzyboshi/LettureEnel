@@ -49,6 +49,7 @@ AppAsset::register($this);
                 $items[]=['label' => 'Letture', 'url' => ['/letture/index']];
                 $items[]=['label' => 'About', 'url' => ['/site/about']];
                 $items[]=['label' => 'Cambia password', 'url' => ['/site/changepassword']];
+                $items[]=['label' => 'Nuovo utente', 'url' => ['/site/signup']];
                 $items[]=['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                         'url' => ['/site/logout'],
                         'linkOptions' => ['data-method' => 'post']];

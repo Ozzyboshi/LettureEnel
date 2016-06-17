@@ -6,7 +6,7 @@ class m160617_071151_datasetup extends Migration
 {
     public function up()
     {
-	$this->insert('auth_item',array(
+	$this->insert($authManager->itemTable,array(
 	 'name'=>'/*',
 	 'type'=>2,
 	 'description'=>NULL,
@@ -16,7 +16,7 @@ class m160617_071151_datasetup extends Migration
 	 'updated_at'=>time(),
 	));
 
-	$this->insert('auth_item',array(
+	$this->insert($authManager->itemTable,array(
 	 'name'=>'/admin/*',
 	 'type'=>2,
 	 'description'=>NULL,
@@ -26,7 +26,7 @@ class m160617_071151_datasetup extends Migration
 	 'updated_at'=>time(),
 	));
 
-	$this->insert('auth_item',array(
+	$this->insert($authManager->itemTable,array(
          'name'=>'permission_admin',
          'type'=>2,
          'description'=>'tutto',
@@ -36,7 +36,7 @@ class m160617_071151_datasetup extends Migration
          'updated_at'=>time(),
         ));
 
-	$this->insert('auth_item',array(
+	$this->insert($authManager->itemTable,array(
          'name'=>'sysadmin',
          'type'=>1,
          'description'=>'tutto',
@@ -46,7 +46,7 @@ class m160617_071151_datasetup extends Migration
          'updated_at'=>time(),
         ));
 
-	$this->insert('auth_item',array(
+	$this->insert($authManager->itemTable,array(
          'name'=>'user',
          'type'=>1,
          'description'=>'cacca',

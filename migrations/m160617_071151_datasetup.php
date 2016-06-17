@@ -81,6 +81,7 @@ class m160617_071151_datasetup extends Migration
 	 'id'=>1,
          'username'=>'admin',
          'auth_key'=>'QahrGMtvmMHecFeO0RdF2lITCNFyFGS5',
+         'displayname'=>'',
 	 'password_hash'=>'$2y$13$h4UJZhbLu8ZKCezkWznIDetsp1DBommupiW7TsW/2PIa7.OQkMB7y',
 	 'email'=>'admin@example.com',
 	 'role'=>'10',

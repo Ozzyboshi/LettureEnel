@@ -37,9 +37,6 @@ return [
 * Se non si dispone di un proprio server web lanciare ./yii serve
 * Richiamare la applicazione web dal proprio browser inserendo l'indirizzo ip del server
 
-You can then access the application through the following URL:
-
-
 ### Installazione con Docker
 Per installare la applicazione web usando docker occorre prima creare un container con un server mysql e creare il database che conterrà i dati, ad esempio:
 ```

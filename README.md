@@ -4,9 +4,9 @@ LettureEnel Applicazione web
 LettureEnel è una applicazione web per registrare e tenere traccia dei consumi rilevati da contatori enel in regime di scambio sul posto.
 
 Letture Enel permette di registrare su di un database mysql ciò che viene riportato dai contatori Enel, in particolare:
--# Consumi da rete ENEL
--# Immissioni del proprio impianto fotovoltaico su rete ENEL
--# Produzione del proprio impianto fotovoltaico
+* Consumi da rete ENEL
+* Immissioni del proprio impianto fotovoltaico su rete ENEL
+* Produzione del proprio impianto fotovoltaico
 Tutti gli inserimenti sono divisi per fascia oraria (F1,F2 e F3).
 
 Da questi dati di input viene poi calcolata una pagina con i delta dei consumi per ogni intervallo temporale, il calcolo dei consumi sfruttando la produzione del fotovoltaico e un suo rapporto con i consumi totali.
@@ -21,8 +21,8 @@ INSTALLAZIONE
 
 ### Installazione da sorgenti
 
--# Clonare i sorgenti dal [Github repository](https://github.com/Ozzyboshi/LettureEnel.git) in una directory sotto la Web root (solitamente /var/www).
--# Editare il file config/db.php e immettere i dati necessari alla connessione al server MySQL come da esempio:
+* Clonare i sorgenti dal [Github repository](https://github.com/Ozzyboshi/LettureEnel.git) in una directory sotto la Web root (solitamente /var/www).
+* Editare il file config/db.php e immettere i dati necessari alla connessione al server MySQL come da esempio:
 ```php
 return [
     'class' => 'yii\db\Connection',
@@ -32,10 +32,10 @@ return [
     'charset' => 'utf8',
 ];
 ```
--# Lanciare composer update per generare la cartella 'vendor'
--# Creare le tabelle e i records necessari per il funzionamento della applicazione web, per fare cio lanciare ./yii migrate dalla root del progetto.
--# Se non si dispone di un proprio server web lanciare ./yii serve
--# Richiamare la applicazione web dal proprio browser inserendo l'indirizzo ip del server
+* Lanciare composer update per generare la cartella 'vendor'
+* Creare le tabelle e i records necessari per il funzionamento della applicazione web, per fare cio lanciare ./yii migrate dalla root del progetto.
+* Se non si dispone di un proprio server web lanciare ./yii serve
+* Richiamare la applicazione web dal proprio browser inserendo l'indirizzo ip del server
 
 You can then access the application through the following URL:
 

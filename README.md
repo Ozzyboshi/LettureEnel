@@ -62,5 +62,8 @@ E' inoltre possibile creare nuovi utenti, una volta creato un nuovo utente occor
 
 In questo momento non esiste una procedura di cancellazione utenti.
 
+### Demo
+
+E' presente una demo online di questa applicazione all'inidirizzo [http://lettureenel.ozzyboshi.com/](http://lettureenel.ozzyboshi.com/)
 
 

@@ -1,7 +1,7 @@
 LettureEnel Applicazione web
 ================================
 
-LettureEnel è una applicazione web per registrare e tenere traccia dei consumi rilevati da contatori enel in regime di scambio sul posto.
+LettureEnel è una applicazione web per registrare e tenere traccia dei consumi rilevati da contatori ENEL in regime di scambio sul posto.
 
 Letture Enel permette di registrare su di un database mysql ciò che viene riportato dai contatori Enel, in particolare:
 * Consumi da rete ENEL
@@ -56,8 +56,10 @@ CONFIGURAZIONE
 ### Utenti
 
 Ad installazione avvenuta è possibile autenticarsi come amministratore cliccando sul tasto Login in alto a destra, le credenziali di accesso sono admin/admin.
+
 Ovviamente è conigliato cambiare la password di amministrazione dopo il primo accesso.
 E' inoltre possibile creare nuovi utenti, una volta creato un nuovo utente occorre assegnargli i permessi di admin attraverso la pagina /index.php/admin/assignment, questa operazione inizialmente è concessa solo all'utente admin.
+
 In questo momento non esiste una procedura di cancellazione utenti.
 
 

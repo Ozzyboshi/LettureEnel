@@ -64,6 +64,6 @@ In questo momento non esiste una procedura di cancellazione utenti.
 
 ### Demo
 
-E' presente una demo online di questa applicazione all'inidirizzo [http://lettureenel.ozzyboshi.com/](http://lettureenel.ozzyboshi.com/)
+E' presente una demo online di questa applicazione all'indirizzo [http://lettureenel.ozzyboshi.com/](http://lettureenel.ozzyboshi.com/)
 
 

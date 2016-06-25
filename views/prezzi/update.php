@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Prezzi */
 
-$this->title = 'Update Prezzi: ' . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Prezzis', 'url' => ['index']];
+$this->title = 'Aggiornamento prezzo con id ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Prezzi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Aggiorna';
 ?>
 <div class="prezzi-update">
 

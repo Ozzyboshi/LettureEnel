@@ -47,6 +47,7 @@ AppAsset::register($this);
             {
                 $items[]=['label' => 'Prezzi', 'url' => ['/prezzi/index']];
                 $items[]=['label' => 'Letture', 'url' => ['/letture/index']];
+                $items[]=['label' => 'Bonifici GSE', 'url' => ['bonificigse/index']];
                 $items[]=['label' => 'About', 'url' => ['/site/about']];
                 $items[]=['label' => 'Cambia password', 'url' => ['/site/changepassword']];
                 $items[]=['label' => 'Nuovo utente', 'url' => ['/site/signup']];

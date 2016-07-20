@@ -71,7 +71,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = 'yii\gii\Module';
     /*$config['modules']['gii'] = [
       'class'=>'yii\gii\Module',
-      'allowedIPs'=>['10.0.1.15','10.0.1.8','10.0.1.6','10.0.1.7']
+      'allowedIPs'=>['*']
     ];*/
 }
 

@@ -1,89 +1,69 @@
-Yii 2 Basic Application Template
+LettureEnel Applicazione web
 ================================
 
-Yii 2 Basic Application Template is a skeleton Yii 2 application best for
-rapidly creating small projects.
+LettureEnel è una applicazione web per registrare e tenere traccia dei consumi rilevati da contatori ENEL in regime di scambio sul posto.
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+Letture Enel permette di registrare su di un database mysql ciò che viene riportato dai contatori Enel, in particolare:
+* Consumi da rete ENEL
+* Immissioni del proprio impianto fotovoltaico su rete ENEL
+* Produzione del proprio impianto fotovoltaico
+Tutti gli inserimenti sono divisi per fascia oraria (F1,F2 e F3).
 
+Da questi dati di input viene poi calcolata una pagina con i delta dei consumi per ogni intervallo temporale, il calcolo dei consumi sfruttando la produzione del fotovoltaico e un suo rapporto con i consumi totali.
 
-DIRECTORY STRUCTURE
--------------------
-
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
-
-
-
-REQUIREMENTS
+REQUISITI
 ------------
 
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+Un interprete php e un server MySQL e un web server.
 
-
-INSTALLATION
+INSTALLAZIONE
 ------------
 
-### Install from an Archive File
+### Installazione da sorgenti
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this application template using the following command:
-
-~~~
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta4"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-CONFIGURATION
--------------
-
-### Database
-
-Edit the file `config/db.php` with real data, for example:
-
+* Clonare i sorgenti dal [Github repository](https://github.com/Ozzyboshi/LettureEnel.git) in una directory sotto la Web root (solitamente /var/www).
+* Editare il file config/db.php e immettere i dati necessari alla connessione al server MySQL come da esempio:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=lettureenel',
     'username' => 'root',
     'password' => '1234',
     'charset' => 'utf8',
 ];
 ```
+* Lanciare composer update per generare la cartella 'vendor'
+* Creare le tabelle e i records necessari per il funzionamento della applicazione web, per fare cio lanciare ./yii migrate dalla root del progetto.
+* Se non si dispone di un proprio server web lanciare ./yii serve
+* Richiamare la applicazione web dal proprio browser inserendo l'indirizzo ip del server
 
-**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+### Installazione con Docker
+Per installare la applicazione web usando docker occorre prima creare un container con un server mysql e creare il database che conterrà i dati, ad esempio:
+```
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+docker exec -it some-mysql mysql -e "create database lettureenel" -pmy-secret-pw -u root --host localhost
+```
+quindi procedere con il container che conterrà l'installazione vera e propria della applicazione web:
+```
+docker run --name lettureenel -p 80:80 -e "DB_USER=root" -e "DB_PASS=my-secret-pw" -e "DB_STRING=mysql:host=db;dbname=lettureenel" -e "DATALOGGER_URL=http://home1.solarlog-web.it/" --link some-mysql:db -d ozzyboshi/lettureeneldockerimage
+docker exec -it lettureenel ./yii migrate
+```
 
-Also check and edit the other files in the `config/` directory to customize your application.
+
+CONFIGURAZIONE
+-------------
+
+### Utenti
+
+Ad installazione avvenuta è possibile autenticarsi come amministratore cliccando sul tasto Login in alto a destra, le credenziali di accesso sono admin/admin.
+
+Ovviamente è conigliato cambiare la password di amministrazione dopo il primo accesso.
+E' inoltre possibile creare nuovi utenti, una volta creato un nuovo utente occorre assegnargli i permessi di admin attraverso la pagina /index.php/admin/assignment, questa operazione inizialmente è concessa solo all'utente admin.
+
+In questo momento non esiste una procedura di cancellazione utenti.
+
+### Demo
+
+E' presente una demo online di questa applicazione all'indirizzo [http://lettureenel.ozzyboshi.com/](http://lettureenel.ozzyboshi.com/)
+
+

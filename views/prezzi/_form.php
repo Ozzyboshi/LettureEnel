@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'datainiziovalidita')->textInput() ?>
+    <?= $form->field($model, 'datainiziovalidita')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '9999/99/99',]); ?>
 
-    <?= $form->field($model, 'datafinevalidita')->textInput() ?>
+    <?= $form->field($model, 'datafinevalidita')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '9999/99/99',]); ?>
 
     <?= $form->field($model, 'prezzofascia1')->textInput() ?>
 
@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'prezzofascia3')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crea' : 'Aggiorna', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

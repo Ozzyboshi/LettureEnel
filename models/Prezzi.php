@@ -42,11 +42,11 @@ class Prezzi extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'datainiziovalidita' => 'Datainiziovalidita',
-            'datafinevalidita' => 'Datafinevalidita',
-            'prezzofascia1' => 'Prezzofascia1',
-            'prezzofascia2' => 'Prezzofascia2',
-            'prezzofascia3' => 'Prezzofascia3',
+            'datainiziovalidita' => 'Data inizio validita',
+            'datafinevalidita' => 'Data fine validita',
+            'prezzofascia1' => 'Prezzo fascia 1',
+            'prezzofascia2' => 'Prezzo fascia 2',
+            'prezzofascia3' => 'Prezzo fascia 3',
         ];
     }
 }

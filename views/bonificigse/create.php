@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Prezzi */
+/* @var $model app\models\Bonificigse */
 
-$this->title = 'Immissione prezzi al Kwh';
-$this->params['breadcrumbs'][] = ['label' => 'Prezzis', 'url' => ['index']];
+$this->title = 'Immissione nuovo bonifico GSE';
+$this->params['breadcrumbs'][] = ['label' => 'Bonifici GSE', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="prezzi-create">
+<div class="bonificigse-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

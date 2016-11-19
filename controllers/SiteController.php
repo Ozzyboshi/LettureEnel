@@ -103,9 +103,15 @@ class SiteController extends Controller
         return "data desc";
     }
 
+    public function createIndexQuery()
+    {
+        return "select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by ".$this->orderByQueryPart();
+    }
+
     public function actionIndex()
     {
-        $query="select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by ".$this->orderByQueryPart();
+        #$query="select letture.id as id,data".$this->composeQueryPart1Full().$this->composeQueryPart2Full()." from letture left join prezzi on data between datainiziovalidita and datafinevalidita,(select @diff1=0".$this->composeQueryPart3Full().") as x order by ".$this->orderByQueryPart();
+        $query=$this->createIndexQuery();
         $lettureActiverecord = new Letture();
 
         $dataProvider = new ActiveDataProvider([

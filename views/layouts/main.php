@@ -35,6 +35,7 @@ AppAsset::register($this);
 
             $items = [
                 ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Charts', 'url' => ['/chart/show']],
                 ['label' => 'Data logger', 'url' => ['/site/datalogger']],
             ];
 

@@ -58,6 +58,7 @@ $config = [
           'site/datalogger',
           'site/about',
           'site/logout',
+          'chart/show',
         ],
     ],
     'params' => $params,

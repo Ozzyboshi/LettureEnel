@@ -58,17 +58,16 @@ class ChartController extends Controller
                 array_unshift($immissioneFascia3Array,intval($value['immissionedelta3']));
         }
 
-        $consumoFascia1Array[0]=0;
-        $consumoFascia2Array[0]=0;
-        $consumoFascia3Array[0]=0;
-
-        $produzioneFascia1Array[0]=0;
-        $produzioneFascia2Array[0]=0;
-        $produzioneFascia3Array[0]=0;
-
-        $immissioneFascia1Array[0]=0;
-        $immissioneFascia2Array[0]=0;
-        $immissioneFascia3Array[0]=0;
+        array_shift($dataArray);
+        array_shift($consumoFascia1Array);
+        array_shift($consumoFascia2Array);
+        array_shift($consumoFascia3Array);
+        array_shift($produzioneFascia1Array);
+        array_shift($produzioneFascia2Array);
+        array_shift($produzioneFascia3Array);
+        array_shift($immissioneFascia1Array);
+        array_shift($immissioneFascia2Array);
+        array_shift($immissioneFascia3Array);
 
         $graph1Array=[['name'=>'Consumo fascia 1','data'=> $consumoFascia1Array],['name'=>'Consumo fascia 2','data'=> $consumoFascia2Array],['name'=>'Consumo fascia 3','data'=> $consumoFascia3Array]];
 

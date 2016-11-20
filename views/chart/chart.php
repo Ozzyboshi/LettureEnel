@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                'categories' => $data
             ],
             'yAxis' => [
-               'title' => ['text' => 'Watt']
+               'title' => ['text' => 'KWatt']
             ],
             'series' => $data1 ,
          ]
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                'categories' => $data
             ],
             'yAxis' => [
-               'title' => ['text' => 'Watt']
+               'title' => ['text' => 'KWatt']
             ],
             'series' => $data2 ,
          ]
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                'categories' => $data
             ],
             'yAxis' => [
-               'title' => ['text' => 'Watt']
+               'title' => ['text' => 'KWatt']
             ],
             'series' => $data3 ,
          ]

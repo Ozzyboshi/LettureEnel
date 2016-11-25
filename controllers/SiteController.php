@@ -153,11 +153,6 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionDatalogger()
-    {
-        return $this->render('datalogger');
-    }
-
     public function actionSignup()
     {
         $model = new SignupForm();

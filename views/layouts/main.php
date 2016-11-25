@@ -36,7 +36,7 @@ AppAsset::register($this);
             $items = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'Charts', 'url' => ['/chart/show']],
-                ['label' => 'Data logger', 'url' => ['/site/datalogger']],
+                ['label' => 'Data logger', 'url' => getenv('DATALOGGER_URL'),'linkOptions'=>['target'=>'_blank']],
             ];
 
             if (Yii::$app->user->isGuest)

@@ -55,6 +55,7 @@ docker exec -it lettureenel ./yii migrate
 ### Supporto SSL / TLS
 In caso di installazione su server pubblico è consigliato accedere all' applicazione web in modalità sicura passando al container in modo appropriato certificato e chiave pregenerati.
 Nel seguente esempio vengono generati certificati e chiavi con Letsencrypt, una certification authority che fornisce certificati X.509 in modo gratuito ed automatico.
+
 Prima di lanciare il seguente comando assicurarsi che i DNS del dominio per il quale viene richiesto il certificato siano funzionanti e risolvano l'ip pubblico della macchina deputata a servire la applicazione web.
 
 ```
@@ -64,7 +65,7 @@ docker run -it --rm -p 443:443 -p 80:80 --name letsencrypt -v "/etc/letsencrypt:
 Una volta generati i certificati (che avranno validità trimestrale) e chiavi, lanciare la applicazione web come nel seguente esempio, ovviamente occorre rimpiazzare example.com con il vostro dominio.
 
 ```
-docker run -v /etc/letsencrypt/archive/lettureenel.example.com/cert1.pem:/etc/certdir/cert.pem:ro -v /etc/letsencrypt/archive/lettureeneltest.example.com/privkey1.pem:/etc/certdir/privkey.pem:ro --name lettureenel -p 80:80 -p 443:443  -e "DB_USER=root" -e "DB_PASS=my-secret-pw" -e "DB_STRING=mysql:host=db;dbname=lettureenel" -e "DATALOGGER_URL=http://home1.solarlog-web.it/" --link some-mysql:db -d ozzyboshi/lettureeneldockerimage
+docker run -v /etc/letsencrypt/archive/lettureenel.example.com/cert1.pem:/etc/certdir/cert.pem:ro -v /etc/letsencrypt/archive/lettureenel.example.com/privkey1.pem:/etc/certdir/privkey.pem:ro --name lettureenel -p 80:80 -p 443:443  -e "DB_USER=root" -e "DB_PASS=my-secret-pw" -e "DB_STRING=mysql:host=db;dbname=lettureenel" -e "DATALOGGER_URL=http://home1.solarlog-web.it/" --link some-mysql:db -d ozzyboshi/lettureeneldockerimage
 ```
 
 CONFIGURAZIONE
